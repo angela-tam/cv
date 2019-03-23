@@ -1,0 +1,191 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Angela}{Tam}
+%\title{Resumé title}      
+
+\email{angela.tam08 [at] gmail.com}                         
+\homepage{angela-tam.github.io}                          
+%\social[linkedin]{john.doe}                         
+\social[twitter]{angelatamtweets}                              
+\social[github]{angela-tam}                               
+%\extrainfo{additional information}                  
+%\photo[64pt][0.4pt]{picture}                        ; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                  
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+\usepackage[minnames=6,maxnames=8,style=nature,sorting=ydnt,backend=bibtex]{biblatex}
+%\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{publications_atam.bib}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2013--2018}{PhD in Neuroscience}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner}  % arguments 3 to 6 can be left empty
+\cventry{2011--2013}{MSc in Neuroscience}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia}
+\cventry{2007--2011}{BSc in Psychology}{University of Ottawa}{Ottawa, Canada}{}{Magna Cum Laude\\Advisor: Patrick Davidson}
+
+% \section{Master thesis}
+% \cvitem{title}{\emph{Title}}
+% \cvitem{supervisors}{Supervisors}
+% \cvitem{description}{Short thesis abstract}
+
+\section{Experience}
+\subsection{Research}
+\cventry{2018--present}{Postdoctoral Fellow}{National University of Singapore}{Singapore}{}{Advisor: B.T. Thomas Yeo}
+\cventry{2013--2018}{Graduate Researcher}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner}%
+\cventry{2011--2013}{Graduate Researcher}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia}
+%{Description line 1\newline{}Description line 2}
+\cventry{2011}{Research Assistant}{Douglas Hospital}{Montreal, Canada}{}{Supervisor: Natasha Rajah}
+\cventry{2010--2011}{Research Student}{University of Ottawa}{Ottawa, Canada}{}{Advisor: Patrick Davidson}
+\cventry{2009--2010}{Research Assistant}{Ottawa Hospital}{Ottawa, Canada}{}{Supervisor: Natasha Ballen}
+\subsection{Teaching}
+\cventry{2018}{Instructor}{Montreal Brainhack School}{Montreal, Canada}{}{}
+\cventry{2016}{Teaching Assistant}{Université de Montréal}{Montreal, Canada}{}{}
+\subsection{Other}
+\cventry{2011--2013}{Psychometric Rater}{Hotel Dieu Hospital}{Kingston, Canada}{}{}
+
+\section{Professional Services}
+\cventry{}{Journal Reviewer}{}{}{}{PLoS ONE (PLOS), Clinical Neurophysiology (Elsevier), Brain Informatics (SpringerOpen)}
+\cventry{2016}{Poster Judge}{Douglas Hospital Research Centre's Undergraduate Expo}{Montreal, Canada}{}{}
+
+
+\section{University Services}
+\cventry{2016--2017}{Student Council Program Representative}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
+\cventry{2014--2017}{Internal Affairs Event Coordinator}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
+\cventry{2014--2015}{Student Representative on Working Group to Review Regulation on Conduct in Research}{McGill University}{Montreal, Canada}{}{}
+\cventry{2012--2013}{Neuroscience Outreach Volunteer}{Queen's University}{Kingston, Canada}{}{}
+
+
+
+%\section{Languages}
+%\cvitemwithcomment{English}{Native}{}
+%\cvitemwithcomment{French}{Proficient}{}
+%\cvitemwithcomment{Cantonese}{Conversational}{}
+
+\section{Awards}
+%\cvitem{2017}{Graduate Research Enhancement and Travel Award}
+\cventry{2018}{Alzheimer’s Association International Conference Travel Fellowship}{}{}{}{}
+\cventry{2017}{Graduate Research Enhancement and Travel Award}{McGill University}{Montreal, Canada}{}{}
+\cventry{2017}{Research in Aging Bursary \$7000}{Centre de recherche de l’institut universitaire de gériatrie de Montréal}{Montreal, Canada}{}{}
+\cventry{2016}{Hendlisz Award for Best Student Paper Finalist}{Douglas Hospital Research Centre}{Montreal, Canada}{}{}
+\cventry{2015}{International Training Programme on Ageing Fellowship}{Joint fellowship funded by the Canadian Institutes of Health Research: Institute of Aging \& Centre for Ageing Research and Development in Ireland}{}{}{}
+\cventry{2015}{Doctoral Award \$60,000 (declined)}{Fonds de recherche du Québec – Santé}{Canada}{}{}
+\cventry{2014}{Alzheimer’s Association International Conference Travel Fellowship}{}{}{}{}
+\cventry{2014}{Graduate Research Enhancement and Travel Award}{McGill University}{Montreal, Canada}{}{}
+\cventry{2013}{Grad Excellence Award in Neurology \& Neurosurgery}{Integrated Program in Neuroscience, McGill University}{Montreal, Canada}{}{}
+\cventry{2012}{Ontario Graduate Scholarship}{Ministry of Training, Colleges and Universities}{Canada}{}{}
+\cventry{2012}{Centre for Neuroscience Award for Excellence}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
+\cventry{2012}{Honourable Hugh F. Gibson Memorial Award}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
+\cventry{2011}{Honourable Hugh F. Gibson Memorial Award}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
+\cventry{2011}{Queen's Graduate Award}{Queen's University}{Kingston, Canada}{}{}
+\cventry{2011}{Best Presentation}{Psychology Undergraduate Thesis Conference}{University of Guelph}{Guelph, Canada}{}
+\cventry{2007}{Immersion Study Scholarship}{University of Ottawa}{Ottawa, Canada}{}{}
+\cventry{2007}{Admission Scholarship, \$10,000}{University of Ottawa}{Ottawa, Canada}{}{}
+
+
+
+% \section{Computer skills}
+% \cvdoubleitem{category 1}{XXX, YYY, ZZZ}{category 4}{XXX, YYY, ZZZ}
+% \cvdoubleitem{category 2}{XXX, YYY, ZZZ}{category 5}{XXX, YYY, ZZZ}
+% \cvdoubleitem{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ}
+
+% \section{Interests}
+% \cvitem{hobby 1}{Description}
+% \cvitem{hobby 2}{Description}
+% \cvitem{hobby 3}{Description}
+
+% \section{Extra 1}
+% \cvlistitem{Item 1}
+% \cvlistitem{Item 2}
+% \cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+
+% \section{Extra 2}
+% \cvlistdoubleitem{Item 1}{Item 4}
+% \cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+% \cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+
+
+\defbibheading{bibliography}[\refname]{} % hides automatic title for references/publications
+\section{Publications}
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+%\bibliographystyle{unsrt}
+%\bibliography{publications_atam}  
+\printbibliography
+
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+% \section{References}
+% \begin{cvcolumns}
+%   \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%   \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%   \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+% \end{cvcolumns}
+
+% \clearpage
+% %-----       letter       ---------------------------------------------------------
+% % recipient data
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
+
+% cover letter here
+
+% \makeletterclosing
+
+% %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
