@@ -25,12 +25,10 @@
 
 % personal data
 \name{Angela}{Tam}
-%\title{Resumé title}      
-
-\email{angela.tam08 [at] gmail.com}                         
+\email{angela.tam08@gmail.com}                         
 \homepage{angela-tam.github.io}                          
 %\social[linkedin]{john.doe}                         
-\social[twitter]{angelatamtweets}                              
+\social[twitter]{angelatamtweets}                             
 \social[github]{angela-tam}                               
 %\extrainfo{additional information}                  
 %\photo[64pt][0.4pt]{picture}                        ; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
@@ -46,9 +44,12 @@
 %\usepackage{multibib}
 %\newcites{book,misc}{{Books},{Others}}
 
-\usepackage[minnames=6,maxnames=8,style=nature,sorting=ydnt,backend=bibtex]{biblatex}
+\usepackage[minnames=6,maxnames=8,style=nature,sorting=ydnt,backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
 %\usepackage[backend=biber,style=authoryear]{biblatex}
 \addbibresource{publications_atam.bib}
+
+\usepackage{lastpage}
+\rfoot{\addressfont\itshape\textcolor{gray}{\thepage\ of \pageref{LastPage}}}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
@@ -58,9 +59,9 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2013--2018}{PhD in Neuroscience}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner}  % arguments 3 to 6 can be left empty
-\cventry{2011--2013}{MSc in Neuroscience}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia}
-\cventry{2007--2011}{BSc in Psychology}{University of Ottawa}{Ottawa, Canada}{}{Magna Cum Laude\\Advisor: Patrick Davidson}
+\cventry{2013--2018}{Ph.D. in Neuroscience}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner\\Thesis: Predicting Alzheimer’s dementia from heterogeneous patterns of neurodegeneration and functional connectivity\\Keywords: neuroimaging, brain networks, machine learning, prediction, biomarker development, neurodegenerative disease}  % arguments 3 to 6 can be left empty
+\cventry{2011--2013}{M.Sc. in Neuroscience}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia\\Thesis: Neuroimaging attentional control in the Stroop task\\Keywords: cognition, neuroimaging, aging}
+\cventry{2007--2011}{B.Sc. in Psychology, Magna Cum Laude}{University of Ottawa}{Ottawa, Canada}{}{Advisor: Patrick Davidson\\Thesis: The effects of aging and sleep quality on location and distance-based processes in memory for when something happened}
 
 % \section{Master thesis}
 % \cvitem{title}{\emph{Title}}
@@ -69,31 +70,34 @@
 
 \section{Experience}
 \subsection{Research}
-\cventry{2018--present}{Postdoctoral Fellow}{National University of Singapore}{Singapore}{}{Advisor: B.T. Thomas Yeo}
-\cventry{2013--2018}{Graduate Researcher}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner}%
-\cventry{2011--2013}{Graduate Researcher}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia}
+\cventry{2018--present}{Postdoctoral Fellow}{National University of Singapore}{Singapore}{}{Advisor: B.T. Thomas Yeo\\Project: Prediction of cognition and psychiatric symptoms using multimodal neuroimaging}
+% \cventry{2013--2018}{Graduate Researcher}{McGill University}{Montreal, Canada}{}{Advisors: Pierre Bellec \& John Breitner}%
+% \cventry{2011--2013}{Graduate Researcher}{Queen's University}{Kingston, Canada}{}{Advisor: Angeles Garcia}
 %{Description line 1\newline{}Description line 2}
-\cventry{2011}{Research Assistant}{Douglas Hospital}{Montreal, Canada}{}{Supervisor: Natasha Rajah}
-\cventry{2010--2011}{Research Student}{University of Ottawa}{Ottawa, Canada}{}{Advisor: Patrick Davidson}
+\cventry{2011}{Research Assistant}{Douglas Hospital Research Centre}{Montreal, Canada}{}{Supervisor: M. Natasha Rajah}
+%\cventry{2010--2011}{Research Student}{University of Ottawa}{Ottawa, Canada}{}{Advisor: Patrick Davidson}
 \cventry{2009--2010}{Research Assistant}{Ottawa Hospital}{Ottawa, Canada}{}{Supervisor: Natasha Ballen}
+\subsection{Consulting}
+\cventry{2019--present}{Research consultant}{perceiv.ai}{}{}{}
 \subsection{Teaching}
 \cventry{2018}{Instructor}{Montreal Brainhack School}{Montreal, Canada}{}{}
 \cventry{2016}{Teaching Assistant}{Université de Montréal}{Montreal, Canada}{}{}
-\subsection{Other}
-\cventry{2011--2013}{Psychometric Rater}{Hotel Dieu Hospital}{Kingston, Canada}{}{}
-
-\section{Professional Services}
-\cventry{}{Journal Reviewer}{}{}{}{PLoS ONE (PLOS), Clinical Neurophysiology (Elsevier), Brain Informatics (SpringerOpen)}
-\cventry{2016}{Poster Judge}{Douglas Hospital Research Centre's Undergraduate Expo}{Montreal, Canada}{}{}
-
-
-\section{University Services}
-\cventry{2016--2017}{Student Council Program Representative}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
-\cventry{2014--2017}{Internal Affairs Event Coordinator}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
-\cventry{2014--2015}{Student Representative on Working Group to Review Regulation on Conduct in Research}{McGill University}{Montreal, Canada}{}{}
+\subsection{Clinical}
+\cventry{2011--2013}{Psychometrist}{Hotel Dieu Hospital}{Kingston, Canada}{}{}
+\subsection{Science Communication}
+\cventry{2017}{Podcaster}{Broad Science}{Montreal, Canada}{}{}
 \cventry{2012--2013}{Neuroscience Outreach Volunteer}{Queen's University}{Kingston, Canada}{}{}
 
+\pagebreak
 
+\subsection{University Services}
+\cventry{2016--2017}{Student Council Program Representative}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
+\cventry{2014--2017}{Internal Affairs Event Coordinator}{McGill Post-Graduate Student Society}{Montreal, Canada}{}{}
+\cventry{2014--2015}{Student Representative on the Working Group to Review Regulation on Conduct in Research}{McGill University}{Montreal, Canada}{}{}
+
+\section{Professional Services}
+\cventry{}{Peer Reviewer}{}{}{}{PLoS ONE (PLOS), Clinical Neurophysiology (Elsevier), Brain Informatics (SpringerOpen), NeuroImage (Elsevier)}
+\cventry{2016}{Poster Judge}{Douglas Hospital Research Centre's Undergraduate Expo}{Montreal, Canada}{}{}
 
 %\section{Languages}
 %\cvitemwithcomment{English}{Native}{}
@@ -107,18 +111,18 @@
 \cventry{2017}{Research in Aging Bursary \$7000}{Centre de recherche de l’institut universitaire de gériatrie de Montréal}{Montreal, Canada}{}{}
 \cventry{2016}{Hendlisz Award for Best Student Paper Finalist}{Douglas Hospital Research Centre}{Montreal, Canada}{}{}
 \cventry{2015}{International Training Programme on Ageing Fellowship}{Joint fellowship funded by the Canadian Institutes of Health Research: Institute of Aging \& Centre for Ageing Research and Development in Ireland}{}{}{}
-\cventry{2015}{Doctoral Award \$60,000 (declined)}{Fonds de recherche du Québec – Santé}{Canada}{}{}
+\cventry{2015}{Doctoral Award \$60,000}{Fonds de recherche du Québec – Santé}{Quebec, Canada}{(declined)}{}
 \cventry{2014}{Alzheimer’s Association International Conference Travel Fellowship}{}{}{}{}
 \cventry{2014}{Graduate Research Enhancement and Travel Award}{McGill University}{Montreal, Canada}{}{}
 \cventry{2013}{Grad Excellence Award in Neurology \& Neurosurgery}{Integrated Program in Neuroscience, McGill University}{Montreal, Canada}{}{}
-\cventry{2012}{Ontario Graduate Scholarship}{Ministry of Training, Colleges and Universities}{Canada}{}{}
+\cventry{2012}{Ontario Graduate Scholarship \$15,000}{Ministry of Training, Colleges and Universities}{Canada}{}{}
 \cventry{2012}{Centre for Neuroscience Award for Excellence}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
 \cventry{2012}{Honourable Hugh F. Gibson Memorial Award}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
 \cventry{2011}{Honourable Hugh F. Gibson Memorial Award}{Centre for Neuroscience Studies, Queen’s University}{Kingston, Canada}{}{}
 \cventry{2011}{Queen's Graduate Award}{Queen's University}{Kingston, Canada}{}{}
 \cventry{2011}{Best Presentation}{Psychology Undergraduate Thesis Conference}{University of Guelph}{Guelph, Canada}{}
 \cventry{2007}{Immersion Study Scholarship}{University of Ottawa}{Ottawa, Canada}{}{}
-\cventry{2007}{Admission Scholarship, \$10,000}{University of Ottawa}{Ottawa, Canada}{}{}
+\cventry{2007}{Admission Scholarship \$10,000}{University of Ottawa}{Ottawa, Canada}{}{}
 
 
 
@@ -152,6 +156,35 @@
 %\bibliographystyle{unsrt}
 %\bibliography{publications_atam}  
 \printbibliography
+* Authors contributed equally.
+
+\section{Conference Presentations}
+\subsection{Oral Presentations}
+\cventry{2016}{Common effects of amnestic mild cognitive impairment on resting-state connectivity across four independent studies}{}{}{}{Conference: Douglas Research Centre Best Student Paper Competition\\Location: Montreal, Canada}
+\cventry{2015}{Consistent inter-protocol differences in resting-state functional connectomes between normal aging and mild cognitive impairment}{}{}{}{Conference: International Training Programme in Ageing\\Location: Dublin, Ireland}
+\cventry{2011}{The effects of aging and sleep quality on location and distance-based processes in memory for when something happened}{}{}{}{Conference: Psychology Undergraduate Thesis Conference\\Location: Guelph, Canada}
+
+\subsection{Poster Presentations}
+\cventry{2019}{Pre-screening machine learning model for beta-amyloid positive enrichment}{}{}{}{Dansereau, C., Tam, A., Rosa-Neto, P., Gauthier, S., Bellec, P.\\Conference: Alzheimer's Association International Conference\\Location: Los Angeles, USA}
+\cventry{2018}{A highly predictive signature of cognition and brain atrophy for progression to Alzheimer's dementia}{}{}{}{Tam, A., Dansereau, C., Iturria-Medina, Y., Urchs, S., Orban, P., Breitner, J., and Bellec, P.\\Conference: Canadian Consortium on Neurodegeneration in Aging\\Location: Montreal, Canada}
+\cventry{2018}{A signature of brain atrophy is highly predictive of progression to Alzheimer's dementia and cognitive decline}{}{}{}{Tam, A., Dansereau, C., Iturria-Medina, Y., Urchs, S., Orban, P., Breitner, J., and Bellec, P.\\Conference: Alzheimer's Association International Conference\\Location: Chicago, USA}
+\cventry{2017}{Multimodal identification of a brain biotype highly predictive of future progression to Alzheimer's dementia}{}{}{}{Dansereau, C., Tam, A., Badhwar, A., Urchs, S., Orban, P., Rosa-Neto, P., Bellec, P.\\Conference: Alzheimer's Association International Conference\\Location: London, UK}
+\cventry{2016}{Resting-state network dysfunction in Alzheimer's disease: A systematic review and meta-analysis}{}{}{}{Badhwar, A., Tam, A., Dansereau, C., Orban, P., Toro, R., Bellec, P.\\Conference: Alzheimer's Association International Conference\\Location: Toronto, Canada}
+\cventry{2016}{Regional gray matter volume and default mode network connectivity are associated with age relative to parental symptom onset in sporadic Alzheimer's disease}{}{}{}{Vogel, J.W., Orban, P., Pichet Binette, A., La Joie, R., Savard, M., Tam, A., Breitner, J.C.S., Bellec, P., Villeneuve, S., PREVENT-AD Research Group\\Conference: Alzheimer's Association International Conference\\Location: Toronto, Canada}
+\cventry{2015}{Functional brain network subtypes are associated with Alzheimer's disease biomarkers in an aging, high-risk, cognitively normal cohort: The Prevent-Alzheimer's disease study}{}{}{}{Orban, P., Urchs, S., Savard, S., Madjar, C., Tam, A., Theroux, L., Evans, A.C., Rosa-Neto, P., Collins, D.L., Poirier, J., Breitner, J.C.S., Bellec, P., PREVENT-AD Research Group\\Conference: Alzheimer's Association International Conference\\Location: Washington D.C., USA}
+\cventry{2015}{Multisite study of robust resting-state fMRI differences in normal aging \& mild cognitive impairment}{}{}{}{Tam, A., Dansereau, C., Badhwar, A., Orban, P., Belleville, S., Chertkow, H., Dagher, A., Hanganu, A., Monchi, O., Rosa-Neto, P., Shmuel, A., Breitner, J., Bellec, P.\\Conference: Human Brain Mapping\\Location: Honolulu, USA}
+\cventry{2014}{Connectome-wide analysis of differences between normal aging, mild cognitive impairment, and dementia of the Alzheimer's type using resting-state fmri connectivity}{}{}{}{Tam, A., Dansereau, C., Badhwar, A., Orban, P., Belleville, S., Chertkow, H., Dagher, A., Hanganu, A., Monchi, O., Rosa-Neto, P., Shmuel, A., Breitner, J., Bellec, P.\\Conference: Alzheimer's Association International Conference\\Location: Copenhagen, Denmark}
+\cventry{2014}{Resting-state fMRI connectivity differences between normal aging, mild cognitive impairment and dementia of the Alzheimer’s type}{}{}{}{Tam, A., Dansereau, C., Badhwar, A., Orban, P., Belleville, S., Chertkow, H., Dagher, A., Hanganu, A., Monchi, O., Rosa-Neto, P., Shmuel, A., Breitner, J., Bellec, P.\\Conference: Canadian Alzheimer's Disease Research Symposium\\Location: Quebec City, Canada}
+\cventry{2013}{fMRI study of attentional
+lapses across aging}{}{}{}{Tam, A., Luedke, A.C., Walsh, J.J., Fernandez-Ruiz, J., Garcia, A.\\Conference: Canadian Conference on Dementia\\Location: Vancouver, Canada}
+\cventry{2012}{An fMRI study of attention modulation in the elderly}{}{}{}{Tam, A., Luedke, A.C., Walsh, J.J., Fernandez-Ruiz, J., Garcia, A.\\Conference: Society for Neuroscience\\Location: New Orleans, USA}
+\cventry{2012}{Selective Attention in the Elderly: An fMRI Study}{}{}{}{Tam, A., Luedke, A.C., Walsh, J.J., Fernandez-Ruiz, J., Garcia, A.\\Conference: Canadian Society for Brain, Behaviour and Cognitive Science\\Location: Kingston, Canada}
+\cventry{2012}{Neural Substrates Underlying Selective Attention in a Stroop Task}{}{}{}{Tam, A., Luedke, A.C., Fernandez-Ruiz, J., Garcia, A.\\Conference: Canadian Society for Brain, Behaviour and Cognitive Science\\Location: Kingston, Canada}
+
+
+
+
+
 
 
 % Publications from a BibTeX file using the multibib package
@@ -189,3 +222,4 @@
 
 
 %% end of file `template.tex'.
+
