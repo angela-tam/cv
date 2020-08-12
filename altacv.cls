@@ -260,11 +260,16 @@
 }
 \let\photo\photoR
 
-\newcommand{\namefont}{\Huge\bfseries}
-\newcommand{\taglinefont}{\large\bfseries}
-\newcommand{\personalinfofont}{\footnotesize\bfseries}
-\newcommand{\cvsectionfont}{\LARGE\bfseries}
-\newcommand{\cvsubsectionfont}{\large\bfseries}
+% \newcommand{\namefont}{\Huge\bfseries}
+% \newcommand{\taglinefont}{\large\bfseries}
+% \newcommand{\personalinfofont}{\footnotesize\bfseries}
+% \newcommand{\cvsectionfont}{\LARGE\bfseries}
+% \newcommand{\cvsubsectionfont}{\large\bfseries}
+\newcommand{\namefont}{\Huge}
+\newcommand{\taglinefont}{\large}
+\newcommand{\personalinfofont}{\footnotesize}
+\newcommand{\cvsectionfont}{\LARGE}
+\newcommand{\cvsubsectionfont}{\large}
 
 \newcommand{\makecvheader}{%
   \begingroup
@@ -300,7 +305,8 @@
   {\large\color{emphasis}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
-  \textbf{\color{accent}#2}\par
+%   \textbf{\color{accent}#2}\par
+  {\color{accent}#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
@@ -309,7 +315,8 @@
 
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
+  \multirow{2}{*}{\Large\color{accent}#1} & %\bfseries\textcolor{emphasis}{#2}\\
+      \textcolor{emphasis}{#2}\\
   & #3
   \end{tabularx}%
   \smallskip
@@ -320,7 +327,8 @@
 }
 
 \newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
+% \textcolor{emphasis}{\textbf{#1}}\hfill
+\textcolor{emphasis}{{#1}}\hfill
 \foreach \x in {1,...,5}{%
   \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }
