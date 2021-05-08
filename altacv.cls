@@ -136,6 +136,45 @@
 \newcommand{\itemmarker}{{\small\textbullet}}
 \newcommand{\ratingmarker}{\faCircle}
 
+%--------------------------------------------------------------------
+% Configuration for fonts
+
+% % Configure a directory location for fonts(default: 'fonts/')
+% \newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+% \fontdir
+
+% \newfontfamily\headerfontlight[
+%   Path=\@fontdir,
+%   UprightFont=*-Thin,
+%   ItalicFont=*-ThinItalic,
+%   BoldFont=*-Medium,
+%   BoldItalicFont=*-MediumItalic,
+% ]{Roboto}
+
+
+%-------------------------------------------------------------------------------
+%                Configuration for colors
+%-------------------------------------------------------------------------------
+% Gray-scale colors
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{gray}{HTML}{5D5D5D}
+\definecolor{lightgray}{HTML}{999999}
+% Basic colors
+\definecolor{green}{HTML}{C2E15F}
+\definecolor{orange}{HTML}{FDA333}
+\definecolor{purple}{HTML}{D3A4F9}
+\definecolor{red}{HTML}{FB4485}
+\definecolor{blue}{HTML}{6CE0F1}
+% Text colors
+\definecolor{darktext}{HTML}{414141}
+\colorlet{text}{darkgray}
+\colorlet{graytext}{gray}
+\colorlet{lighttext}{lightgray}
+%-------------------------------------------------------------------------------
+
+
 \RequirePackage{tikz}
 \usetikzlibrary{arrows}
 \RequirePackage[skins]{tcolorbox}
@@ -150,7 +189,7 @@
 % \RequirePackage{marginfix}
 
 \setlength{\parindent}{0pt}
-\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.5ex}}\medskip}
+\newcommand{\divider}{\textcolor{body!30}{\hdashrule{\linewidth}{0.6pt}{0.1ex}}\medskip}
 
 \newenvironment{fullwidth}{%
   \begin{adjustwidth}{}{\dimexpr-\marginparwidth-\marginparsep\relax}}
@@ -206,6 +245,9 @@
 }
 \ExplSyntaxOff
 
+% \newcommand*{\headerfirststyle}[1]{{\fontsize{32pt}{1em}\headerfontlight\color{graytext} #1}}
+% \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
+
 \newcommand{\name}[1]{\def\@name{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
@@ -260,13 +302,8 @@
 }
 \let\photo\photoR
 
-% \newcommand{\namefont}{\Huge\bfseries}
-% \newcommand{\taglinefont}{\large\bfseries}
-% \newcommand{\personalinfofont}{\footnotesize\bfseries}
-% \newcommand{\cvsectionfont}{\LARGE\bfseries}
-% \newcommand{\cvsubsectionfont}{\large\bfseries}
 \newcommand{\namefont}{\Huge}
-\newcommand{\taglinefont}{\large}
+\newcommand{\taglinefont}
 \newcommand{\personalinfofont}{\footnotesize}
 \newcommand{\cvsectionfont}{\LARGE}
 \newcommand{\cvsubsectionfont}{\large}
@@ -276,7 +313,7 @@
     \altacv@left@photos\hfill%
     \begin{minipage}{\dimexpr\linewidth-\altacv@photos@width}%
     \raggedright%
-    {\namefont\color{name}\MakeUppercase{\@name}\par}
+    {\namefont\color{name}{\@name}\par}
     \medskip
     {\taglinefont\color{tagline}\@tagline\par}
     \medskip
@@ -291,7 +328,7 @@
 \newcommand{\cvsection}[2][]{%
   \bigskip%
   \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
-  {\color{heading}\cvsectionfont\MakeUppercase{#2}}\\[-1ex]%
+  {\color{heading}\cvsectionfont{#2}}\\[-1ex]%
   {\color{headingrule}\rule{\linewidth}{2pt}\par}\medskip
 }
 
@@ -302,11 +339,11 @@
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
+  {\large\color{accent}#1\par}
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
 %   \textbf{\color{accent}#2}\par
-  {\color{accent}#2}\par
+  {\color{body}#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
