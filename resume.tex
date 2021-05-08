@@ -33,27 +33,22 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 
-
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-\ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Lato}
-\else
-  % If using pdflatex:
-  \usepackage[default]{roboto}
-\fi
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{roboto}
 
 % Change the colours if you want to
 \definecolor{Aqua}{HTML}{0a9ea8}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{Black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{lightgray}{HTML}{999999}
 % \colorlet{name}{black}
-\colorlet{tagline}{Aqua}
-\colorlet{heading}{Aqua}
-\colorlet{headingrule}{Aqua}
+\colorlet{tagline}{darkgray}
+\colorlet{heading}{darkgray}
+\colorlet{headingrule}{darkgray}
 % \colorlet{subheading}{PastelRed}
-\colorlet{accent}{Aqua}
+\colorlet{accent}{darkgray}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
@@ -73,10 +68,12 @@
 \usepackage[minnames=6,maxnames=8,style=nature,sorting=ydnt,backend=bibtex,doi=false,isbn=false,url=false]{biblatex}
 \addbibresource{publications_atam.bib}
 
+\usepackage{microtype}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\cfoot{ANGELA TAM}
+\cfoot{\textls{ANGELA TAM}}
+
 
 %\renewcommand{\headrulewidth}{2pt}
 %\renewcommand{\footrulewidth}{1pt}
@@ -84,8 +81,9 @@
 % -------------- content starts here --------------------------
 
 \begin{document}
-\name{Angela Tam}
-\tagline{Data Scientist}
+% \name{\bfseries{A N G E L A \  \ T A M}}
+\name{\textls{ANGELA \bfseries{TAM}}}
+\tagline{DATA SCIENTIST}
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
@@ -111,6 +109,10 @@
 % break across pages if things get too long.
 \begin{paracol}{2}
 
+% Vertical divider
+% \setlength{\columnseprule}{1pt}
+% \def\columnseprulecolor{\color{blue}}
+
 \cvsection{About}
 A data scientist with expertise in developing prognostic \\ neuroimaging biomarkers for neurodegenerative diseases. \\ Believes in practicing open science and sharing open source \\ software to advance discoveries.
 \smallskip
@@ -119,11 +121,12 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 
 \cvsection{Experience}
 
-\cvevent{Clinical Lead \& Senior Scientist}{Perceiv AI}{2019 -- Present}{Montreal, Canada}
+\cvevent{Senior Scientist}{Perceiv AI}{2019 -- Present}{Montreal, Canada}
 \begin{itemize}
     \item Developed patient selection tools for clinical trials by pairing biomedical data and machine learning
-    \item Wrote grants and funding proposals
-    \item Aggregated and organized several large-scale datasets containing imaging, genetic, and clinical information
+    \item Coded pipelines that aggregated, cleaned, and processed large-scale datasets containing imaging, genetic, and clinical information
+    \item Designed brain imaging processing pipelines to extract relevant features and implemented quality control procedures
+    \item Conducted precision medicine research in neurodegenerative and cardiovascular diseases and presented findings in scientific journals and conferences
     \item \url{https://perceiv.ai/}
 \end{itemize}
 
@@ -133,7 +136,7 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 \begin{itemize}
     \item Advisor: B. T. Thomas Yeo
     \item Project: Shared and unique brain network features predict cognition, personality and mental health in childhood
-    \item Used neuroimaging features to predict behavioral outcomes in a large-scale dataset
+    \item Used neuroimaging features derived from functional magnetic resonance imaging to predict behavioral outcomes in a large-scale dataset with kernel ridge regression
 \end{itemize}
 
 \divider
@@ -141,6 +144,7 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 \cvevent{Graduate Student Researcher}{Centre de recherche de l'Institut universitaire de gériatrie de \\ Montréal}{2013 -- 2018}{Montreal, Canada}
 \begin{itemize}
     \item Developed neuroimaging biomarkers of Alzheimer's disease dementia with structural and functional magnetic resonance imaging
+    \item Used behavioral and neuroimaging features to predict a future diagnosis of dementia with support vector classification and logistic regression
 \end{itemize}
 
 \divider
@@ -148,15 +152,16 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 \cvevent{Instructor}{Montreal Brainhack School}{2018}{Montreal, Canada}
 \begin{itemize}
     \item Prepared and presented live demonstrations of data science packages (pandas, scikit-learn) and neuroimaging resources
+    \item Debugged problems with students in on-demand one-on-one sessions
     \item \url{https://brainhackmtl.github.io/school2018/}
 \end{itemize}
 
-\divider
+% \divider
 
-\cvevent{Teaching Assistant}{Université de Montréal}{2016}{Montréal, Canada}
-\begin{itemize}
-    \item Tutored students in MATLAB programming for neuroscience in live question and answer sessions
-\end{itemize}
+% \cvevent{Teaching Assistant}{Université de Montréal}{2016}{Montréal, Canada}
+% \begin{itemize}
+%     \item Tutored students in MATLAB programming for neuroscience in live question and answer sessions
+% \end{itemize}
 
 % \divider
 
@@ -198,23 +203,32 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 
 \cvsection{Skills}
 
-\cvtag{git / GitHub}
+\cvtag{git/GitHub}
 \cvtag{Python}
-\cvtag{MATLAB} \\
+\cvtag{Jupyter} 
+\cvtag{R} \\
+\cvtag{MATLAB}
 \cvtag{Octave}
-\cvtag{R}
 \cvtag{Bash}
-\cvtag{SQL}
+\cvtag{SQL} \\
+\cvtag{HTML}
 \cvtag{LaTeX}
-
+\cvtag{Docker}
+\cvtag{Unix/Linux}
 \divider\smallskip
 
+\cvtag{big data}
+\cvtag{neuroimaging}
+\cvtag{MRI}
+\cvtag{fMRI} \\
+\cvtag{scientific software development} \\
+\cvtag{scientific research}
+\cvtag{scientific writing}
 \cvtag{data visualization}
 \cvtag{data wrangling} \\
 \cvtag{data mining}
-\cvtag{big data} \\
 \cvtag{machine learning}
-\cvtag{neuroimaging (MRI)}
+
 
 \cvsection{Languages}
 
