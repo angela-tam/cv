@@ -115,13 +115,13 @@
   \RequirePackage[newcommands]{ragged2e}
 \fi
 
-\if@withhyper
-  \AtBeginDocument{%
-    \RequirePackage{hyperref}
-    \hypersetup{hidelinks}
-    \urlstyle{same}
-  }
-\fi
+% \if@withhyper
+%   \AtBeginDocument{%
+%     \RequirePackage{hyperref}
+%     \hypersetup{hidelinks}
+%     \urlstyle{same}
+%   }
+% \fi
 
 \RequirePackage{xcolor}
 
@@ -217,14 +217,14 @@
 \ExplSyntaxOn
 \NewDocumentCommand{\printinfo}{m m o}{%
   \IfNoValueTF{#3}{%
-    \mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
+    \mbox{\textcolor{emphasis}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
   }{%
      \if@withhyper%
-      \mbox{\textcolor{accent}{\normalfont #1}~
+      \mbox{\textcolor{emphasis}{\normalfont #1}~
       \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
      \else%
-       \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
-      \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
+      \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
+      \mbox{\textcolor{emphasis}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
      \fi%
   }%
 }%
@@ -343,7 +343,7 @@
   \smallskip\normalsize
   \ifstrequal{#2}{}{}{
 %   \textbf{\color{accent}#2}\par
-  {\color{body}#2}\par
+  {\color{accent}#2}\par
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
@@ -352,7 +352,7 @@
 
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}#1} & %\bfseries\textcolor{emphasis}{#2}\\
+  \multirow{2}{*}{\Large\color{accent}#1} & 
       \textcolor{emphasis}{#2}\\
   & #3
   \end{tabularx}%
@@ -364,7 +364,6 @@
 }
 
 \newcommand{\cvskill}[2]{%
-% \textcolor{emphasis}{\textbf{#1}}\hfill
 \textcolor{emphasis}{{#1}}\hfill
 \foreach \x in {1,...,5}{%
   \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
@@ -427,7 +426,7 @@
 
 \newcommand{\cvref}[3]{%
   \smallskip
-  \textcolor{emphasis}{\textbf{#1}}\par
+  \textcolor{accent}{\textbf{#1}}\par
   \begin{description}[font=\color{accent},style=multiline,leftmargin=1.35em,align=left]
   \item[\small\normalfont\emailsymbol] #2
   \item[\small\normalfont\mailaddresssymbol] #3
