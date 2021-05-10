@@ -23,6 +23,15 @@
 
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=[HTML]{32c7a1},
+    }
+
+\urlstyle{same}
+
 %% AltaCV uses the fontawesome5 and academicon fonts
 %% and packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
@@ -81,7 +90,6 @@
 % -------------- content starts here --------------------------
 
 \begin{document}
-% \name{\bfseries{A N G E L A \  \ T A M}}
 \name{\textls{ANGELA \bfseries{TAM}}}
 \tagline{DATA SCIENTIST}
 \personalinfo{%
@@ -121,11 +129,12 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 
 \cvsection{Experience}
 
-\cvevent{Senior Scientist}{Perceiv AI}{2019 -- Present}{Montreal, Canada}
+\cvevent{Senior Scientist \& Software Developer}{Perceiv AI}{2019 -- Present}{Montreal, Canada}
 \begin{itemize}
     \item Developed patient selection tools for clinical trials by pairing biomedical data and machine learning
     \item Coded pipelines that aggregated, cleaned, and processed large-scale datasets containing imaging, genetic, and clinical information
     \item Designed brain imaging processing pipelines to extract relevant features and implemented quality control procedures
+    \item Containerized software for deployment on cloud computing services
     \item Conducted precision medicine research in neurodegenerative and cardiovascular diseases and presented findings in scientific journals and conferences
     \item \url{https://perceiv.ai/}
 \end{itemize}
@@ -143,8 +152,8 @@ A data scientist with expertise in developing prognostic \\ neuroimaging biomark
 
 \cvevent{Graduate Student Researcher}{Centre de recherche de l'Institut universitaire de gériatrie de \\ Montréal}{2013 -- 2018}{Montreal, Canada}
 \begin{itemize}
-    \item Developed neuroimaging biomarkers of Alzheimer's disease dementia with structural and functional magnetic resonance imaging
-    \item Used behavioral and neuroimaging features to predict a future diagnosis of dementia with support vector classification and logistic regression
+    \item Processed brain images acquired with structural and functional magnetic resonance imaging and trained support vector classification and logistic regression models to predict Alzheimer's disease dementia
+    \item Contributed to the development of an open source neuroimaging \\pipeline: \href{https://niak.simexp-lab.org/build/html/index.html}{NeuroImaging Analysis Kit}
 \end{itemize}
 
 \divider
