@@ -1,0 +1,271 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.3, 10 May 2020) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}https://www.overleaf.com/project/5f0115549ad54c000124c196
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=[HTML]{32c7a1},
+    }
+\urlstyle{same}
+
+%% AltaCV uses the fontawesome5 and academicon fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{roboto}
+
+% Change the colours if you want to
+\definecolor{Aqua}{HTML}{0a9ea8}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{Black}{HTML}{000000}
+\definecolor{darkgray}{HTML}{333333}
+\definecolor{lightgray}{HTML}{999999}
+% \colorlet{name}{black}
+\colorlet{tagline}{darkgray}
+\colorlet{heading}{darkgray}
+\colorlet{headingrule}{darkgray}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{darkgray}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+% Publications list
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\usepackage[minnames=6,maxnames=8,style=nature,sorting=ydnt,backend=bibtex,natbib=True,doi=true,isbn=false,url=false]{biblatex}
+\addbibresource{publications_atam.bib}
+% print url if no doi
+\renewbibmacro*{doi+eprint+url}{%
+    \printfield{doi}%
+    \newunit\newblock%
+    \iftoggle{bbx:eprint}{%
+        \usebibmacro{eprint}%
+    }{}%
+    \newunit\newblock%
+    \iffieldundef{doi}{%
+        \usebibmacro{url+urldate}}%
+        {}%
+    }
+
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\textls{ANGELA TAM}}
+
+%\renewcommand{\headrulewidth}{2pt}
+%\renewcommand{\footrulewidth}{1pt}
+
+% -------------- content starts here --------------------------
+
+\begin{document}
+\name{\textls{ANGELA \bfseries{TAM}}}
+\tagline{DATA SCIENTIST}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{angela.tam@mail.mcgill.ca}
+%  \phone{}
+%  \mailaddress{}
+%  \location{}
+  \homepage{angela-tam.github.io}
+  \twitter{@angelatamtweets}
+%  \linkedin{}
+  \github{angela-tam}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+% Vertical divider
+% \setlength{\columnseprule}{1pt}
+% \def\columnseprulecolor{\color{blue}}
+
+\cvsection{About}
+A data scientist with expertise in developing prognostic \\ neuroimaging biomarkers for neurodegenerative diseases. \\ Believes in practicing open science and sharing open source \\ software to advance discoveries.
+\smallskip
+
+%\divider
+
+\cvsection{Experience}
+
+\cvevent{Senior Scientist \& Software Developer}{Perceiv AI}{2019 -- Present}{Montreal, Canada}
+\begin{itemize}
+    \item Developed patient selection tools for clinical trials by pairing biomedical data and machine learning
+    \item Coded pipelines that aggregated, cleaned, and processed large-scale datasets containing imaging, genetic, and clinical information
+    \item Designed brain imaging processing pipelines to extract relevant features and implemented quality control procedures
+    \item Containerized software for deployment on cloud computing services
+    \item Led precision medicine research that aimed to predict individuals at high-risk of neurodegenerative diseases and presented original findings in scientific journals and conferences
+    \item \url{https://perceiv.ai/}
+\end{itemize}
+
+\divider
+
+\cvevent{Postdoctoral Research Fellow}{National University of Singapore}{2018 -- 2020}{Singapore}
+\begin{itemize}
+    \item Advisor: B. T. Thomas Yeo
+    \item Project: Shared and unique brain network features predict cognition, personality and mental health in childhood
+    \item Used neuroimaging features derived from functional magnetic resonance imaging to predict cognition and psychiatric symptoms in a large-scale dataset with kernel ridge regression
+\end{itemize}
+
+\divider
+
+\cvevent{Graduate Student Researcher}{Centre de recherche de l'Institut universitaire de gériatrie de \\ Montréal}{2013 -- 2018}{Montreal, Canada}
+\begin{itemize}
+    \item Processed brain images acquired with structural and functional magnetic resonance imaging and trained machine learning models (e.g. support vector machine, logistic regression, random forest) to predict Alzheimer's disease dementia
+    \item Contributed to the development of an open source neuroimaging \\pipeline: \href{https://niak.simexp-lab.org/build/html/index.html}{NeuroImaging Analysis Kit}
+\end{itemize}
+
+\divider
+
+\cvevent{Instructor}{Montreal Brainhack School}{2018}{Montreal, Canada}
+\begin{itemize}
+    \item Prepared and presented live demonstrations of data science packages (pandas, scikit-learn) and neuroimaging resources
+    \item Debugged problems with students in on-demand one-on-one sessions
+    \item \url{https://brainhackmtl.github.io/school2018/}
+\end{itemize}
+
+% \divider
+
+% \cvevent{Teaching Assistant}{Université de Montréal}{2016}{Montréal, Canada}
+% \begin{itemize}
+%     \item Tutored students in MATLAB programming for neuroscience in live question and answer sessions
+% \end{itemize}
+
+% \divider
+
+% \cvevent{Psychometrist}{Hotel Dieu Hospital}{2011 -- 2013}{Kingston, Canada}
+% \begin{itemize}
+%     \item Conducted clinical interviews and neuropsychological evaluations of patients with cognitive complaints
+% \end{itemize}
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Education}
+
+\cvevent{Ph.D. in Neuroscience}{McGill University}{2013 -- 2018}{Montreal, Canada}
+\begin{itemize}
+    \item Advisors: Pierre Bellec \& John Breitner
+    \item Thesis: Predicting Alzheimer's dementia from heterogeneous patterns of neurodegeneration and functional connectivity
+    \item Keywords: neuroimaging, brain networks, machine learning, prediction, biomarker development, neurodegenerative disease
+\end{itemize}
+
+\divider
+
+\cvevent{M.Sc. in Neuroscience}{Queen's University}{2011 -- 2013}{Kingston, Canada}
+\begin{itemize}
+    \item Advisor: Angeles Garcia
+    \item Thesis: Neuroimaging attentional control in the Stroop task
+    \item Keywords: cognition, neuroimaging, aging
+\end{itemize}
+
+\divider
+
+\cvevent{B.Sc. in Psychology}{University of Ottawa}{2007 -- 2011}{Ottawa, Canada}
+\begin{itemize}
+    \item Magna Cum Laude
+    \item Advisor: Patrick Davidson
+    \item Thesis: The effects of aging and sleep quality on location and distance-based processes in memory for when something happened
+\end{itemize}
+
+\cvsection{Skills}
+
+\cvtag{git/GitHub}
+\cvtag{Python}
+\cvtag{Jupyter}
+\cvtag{R} \\
+\cvtag{MATLAB}
+\cvtag{Octave}
+\cvtag{Bash}
+\cvtag{AWS} \\
+\cvtag{HTML}
+\cvtag{LaTeX}
+\cvtag{Docker}
+\cvtag{Unix/Linux}
+\divider\smallskip
+
+\cvtag{big data}
+\cvtag{neuroimaging}
+\cvtag{MRI}
+\cvtag{fMRI} \\
+\cvtag{scientific software development} \\
+\cvtag{scientific research}
+\cvtag{scientific writing}
+\cvtag{data visualization}
+\cvtag{data wrangling} \\
+\cvtag{data mining}
+\cvtag{machine learning}
+
+
+\cvsection{Languages}
+
+\cvskill{English}{5}
+\cvskill{French}{4}
+\cvskill{Cantonese}{3}
+
+\end{paracol}
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+\newpage
+
+\cvsection{Publications}
+\defbibheading{bibliography}[\refname]{} % hides automatic title for references/publications
+\nocite{*}
+\printbibliography
+* Authors contributed equally.
+
+
+\end{document}
